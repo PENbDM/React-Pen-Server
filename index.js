@@ -8,6 +8,7 @@ import userRoutes from "./routes/user.js";
 import itemRoutes from "./routes/item.js";
 import orderRoutes from "./routes/order.js";
 import order from "./models/order.js";
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("Connected"))
@@ -24,5 +25,5 @@ app.use("/api/user", userRoutes);
 app.use("/api/", itemRoutes);
 app.use("/api/", orderRoutes);
 app.listen(process.env.PORT, () => {
-  console.log("Server started on 4000 port");
+  console.log("Server started on PORT");
 });
